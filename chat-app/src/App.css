@@ -1,0 +1,291 @@
+@keyframes SignTextAnim {
+  from {background-size: 300% 300%; filter: hue-rotate(0);}
+  to {background-size: 100% 100%; filter: hue-rotate(360deg);}
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: linear-gradient(45deg,Purple,Blue);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+button {
+  border : 2px solid;
+  border-radius: 10px;
+}
+
+
+h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1.MainHeader {
+  text-align: center;
+  font-size: 50px;
+  background-image: linear-gradient(purple,pink);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+h1.MainHeader.Global {
+  position: absolute;
+  left: 44%;
+  top  : 15%;
+}
+
+h1.MainHeader.RoomText {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+}
+
+
+
+
+.Container {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%,-50%);
+
+
+  border: 1px solid blueviolet;
+  background-image: linear-gradient(purple,blue);
+  border-radius: 20px;
+  height: 50vh;
+  width: 40vw;
+}
+
+
+.Container.RoomList {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  transform: translate(-50%,-50%);
+  height: 50vh;
+  width: 20vw;
+    display: flex;
+  flex-direction: column;
+}
+
+.Container.EditMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blueviolet;
+  background-image: linear-gradient(45deg,white,purple);
+  border-radius: 20px;
+  height: 15vh;
+  width: 9vw;
+  z-index: 3;
+}
+
+.Container.ChatArea {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  height: 45vh;
+  width: 40vw;
+  overflow: auto;
+  z-index: 1;
+  top: 45%;
+    background-image: linear-gradient(purple,rgb(170, 0, 255));
+    overflow-x: hidden;
+}
+
+
+.PromptContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+
+  border: 1px solid blueviolet;
+  background-image: linear-gradient(purple,rgb(176, 87, 155));
+  border-radius: 20px;
+  height: 100vh;
+  width: 20vw;
+}
+
+.Dialogue {
+  border: 5px solid transparent;
+  height: 5vh;
+  width: 40vw;
+  border-radius: 10px;
+  color: white;
+}
+
+.Dialogue:hover {
+  background-color: rgba(169, 150, 150, 0.5);
+}
+
+
+
+textarea {
+  border-radius: 5px;
+  resize: none;
+  width: 200px;
+  background-image: linear-gradient(45deg,purple,blue);
+  color: black;
+}
+
+textarea::placeholder {
+  color: grey;
+}
+
+textarea.Username {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%,-50%);
+}
+
+textarea.Password {
+  position: absolute;
+  left: 50%;
+  bottom: 40%;
+  transform: translate(-50%,-50%);
+}
+
+textarea.ConfrimPassword {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translate(-50%,-50%);
+}
+
+
+button.LoginButton {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%,-50%);
+  width: 100px;
+  height: 50px;
+}
+
+button.EditButton {
+  border: 10px solid transparent;
+  background-color: transparent;
+  font-size: 20px;
+  color: transparent;
+  background-image: linear-gradient(white,pink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+button.EditButton:hover {
+  background-image: linear-gradient(purple,pink);
+}
+
+
+h1.SignText {
+  text-align: center;
+}
+
+h1.StatusText {
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  background-image: linear-gradient(pink,purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+button.SignPrompt {
+  background-image: linear-gradient(rgb(95, 45, 161),pink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-color: transparent;
+  border: 5px solid transparent;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%,-50%);
+  height: 10vh;
+  width: 20vw;
+  font-size: 50px;
+  animation:  SignTextAnim 1s infinite linear;
+}
+
+
+
+button.SignPrompt:hover {
+  text-decoration: underline;
+}
+
+
+button.SignPrompt.CreateRoom {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+
+
+button.SignButton {
+    position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%,-50%);
+  width: 100px;
+  height: 50px;
+}
+
+textarea.chat {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 25vw;
+}
+
+
+.ProfileBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 5px solid rgba(148, 75, 193, 0.8);
+  border-radius: 10px;
+  width: 15vw;
+  height: 10vh;
+
+  background-image: linear-gradient(45deg,rgb(57, 9, 231),rgb(255, 255, 255));
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+
+
+
+
+
+}
+
+.ClientText {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  background-image: linear-gradient(45deg,pink,purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
